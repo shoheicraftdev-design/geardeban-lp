@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GearDeban ギアデバン — 使わなかったギアも記録する</title>
+<meta name="description" content="持って行ったのに、使わなかった。その1回を記録するキャンプギア管理アプリ。「持っている」ではなく「どう使われてきたか」が、ギアの側から読めます。">
+<meta property="og:title" content="GearDeban ギアデバン — 使わなかったギアも記録する">
+<meta property="og:description" content="持って行ったのに、使わなかった。その1回を記録するキャンプギア管理アプリ。">
+<meta property="og:type" content="website">
+<style>
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f5f5f7;
+    --fg: #1c1c1e;
+    --fg-soft: #5a5a5f;
+    --line: #e3e3e6;
+    --accent: #0a66c2;
+    --card: #ffffff;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111113;
+      --bg-soft: #1c1c1f;
+      --fg: #f2f2f4;
+      --fg-soft: #a8a8ae;
+      --line: #2e2e33;
+      --accent: #7ab8f5;
+      --card: #1c1c1f;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif;
+    line-height: 1.85;
+    color: var(--fg);
+    background: var(--bg);
+    font-size: 16px;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+  section { padding: 56px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+
+  /* hero */
+  .hero { text-align: center; padding: 72px 0 56px; }
+  .icon { width: 84px; height: 84px; border-radius: 20px; margin-bottom: 20px; }
+  .mark {
+    display: inline-block; font-size: 0.8rem; letter-spacing: .12em;
+    color: var(--fg-soft); border: 1px solid var(--line);
+    border-radius: 999px; padding: 4px 14px; margin-bottom: 22px;
+  }
+  h1 { font-size: clamp(2rem, 7vw, 3rem); line-height: 1.35; margin: 0 0 18px; letter-spacing: .01em; }
+  .lead { font-size: clamp(1rem, 3.4vw, 1.15rem); color: var(--fg-soft); margin: 0 auto 32px; max-width: 34em; }
+  .cta {
+    display: inline-block; background: var(--fg); color: var(--bg);
+    text-decoration: none; font-weight: 600;
+    padding: 14px 30px; border-radius: 999px; font-size: 1rem;
+  }
+  .cta:hover { opacity: .85; }
+  .cta-note { display: block; margin-top: 12px; font-size: .85rem; color: var(--fg-soft); }
+
+  h2 { font-size: clamp(1.3rem, 4.6vw, 1.7rem); margin: 0 0 10px; line-height: 1.45; }
+  h3 { font-size: 1.05rem; margin: 0 0 6px; }
+  .sub { color: var(--fg-soft); margin: 0 0 30px; }
+  p { margin: 0 0 1em; }
+
+  /* owned vs alive comparison */
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 26px; }
+  .compare > div {
+    background: var(--bg-soft); border-radius: 16px; padding: 24px 20px;
+  }
+  .compare .label { font-size: .82rem; color: var(--fg-soft); margin-bottom: 10px; }
+  .compare strong { display: block; font-size: 1rem; margin-bottom: 8px; }
+  .compare p { font-size: .92rem; color: var(--fg-soft); margin: 0; }
+  @media (max-width: 560px) { .compare { grid-template-columns: 1fr; } }
+
+  /* feature rows */
+  .row { display: grid; grid-template-columns: 1fr 260px; gap: 40px; align-items: center; }
+  .row.flip { grid-template-columns: 260px 1fr; }
+  .row.flip .shot { order: -1; }
+  .shot img {
+    width: 100%; max-width: 260px; height: auto; display: block; margin: 0 auto;
+    border-radius: 22px; border: 1px solid var(--line);
+  }
+  @media (max-width: 720px) {
+    .row, .row.flip { grid-template-columns: 1fr; gap: 26px; }
+    .row.flip .shot { order: 0; }
+  }
+
+  .tag {
+    display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .06em;
+    padding: 2px 9px; border-radius: 6px; vertical-align: middle; margin-left: 8px;
+  }
+  .tag.free { background: #e5f3e8; color: #256b36; }
+  .tag.pro  { background: #efe7fb; color: #5a3ba8; }
+  @media (prefers-color-scheme: dark) {
+    .tag.free { background: #1e3a26; color: #9ad9ac; }
+    .tag.pro  { background: #2e2545; color: #c3aaf2; }
+  }
+
+  ul { padding-left: 1.3em; margin: 0 0 1em; }
+  li { margin-bottom: .4em; }
+  .note { background: var(--bg-soft); border-radius: 14px; padding: 20px 22px; color: var(--fg-soft); font-size: .94rem; }
+  a { color: var(--accent); }
+
+  footer { padding: 40px 0 64px; font-size: .9rem; color: var(--fg-soft); text-align: center; }
+  footer a { margin: 0 10px; display: inline-block; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <img class="icon" src="images/appicon.png" alt="GearDeban アプリアイコン">
+    <span class="mark">iPhone アプリ</span>
+    <h1>持って行ったのに、<br>使わなかった。</h1>
+    <p class="lead">
+      GearDeban（ギアデバン）は、その1回を記録するキャンプギア管理アプリです。<br>
+      キャンプごとに使ったギアをチェックするだけで、ギアの側から「どう使われてきたか」が読めるようになります。
+    </p>
+    <a class="cta" href="https://apps.apple.com/jp/app/geardeban-%E3%82%AE%E3%82%A2%E3%83%87%E3%83%90%E3%83%B3/id6800662584">App Store で見る</a>
+    <span class="cta-note">記録は無制限に無料。iCloud同期だけが買い切り ¥480 です</span>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>「所有」ではなく「生存」を記録する</h2>
+    <p class="sub">キャンプギアのアプリの多くは「持っている」を記録します。GearDeban が記録するのは、買ったギアが自分のキャンプで生き残ったかどうかです。</p>
+
+    <div class="compare">
+      <div>
+        <div class="label">よくある記録</div>
+        <strong>持っているギアの一覧</strong>
+        <p>棚卸しはできても、そのギアが実際に役に立っているかは分かりません。</p>
+      </div>
+      <div>
+        <div class="label">GearDeban</div>
+        <strong>使った／使わなかったの記録</strong>
+        <p>「持って行ったのに使わなかった」を残すことで、ギアが今どう使われているかが見えます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <h2>名前だけで、すぐ登録</h2>
+        <p>ギアを追加するのに、必要なのは名前だけです。カテゴリ・メーカー・購入年月日・写真は、あとから「ギア詳細」の「詳細」で足せます。</p>
+        <p class="sub" style="margin-bottom:0">最初から全部埋めなくていい、という設計です。</p>
+      </div>
+      <div class="shot"><img src="images/shot-05-add.png" alt="ギアを追加する画面。名前欄だけが必須で、写真や詳細はあとから追加できる" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="row flip">
+      <div class="shot"><img src="images/shot-01-usage.png" alt="持って行ったギアを記録する画面。使った、または持って行ったが使わなかったをタップで選べる" loading="lazy"></div>
+      <div>
+        <h2>「使わなかった」も、意味を分けて残せる</h2>
+        <p>キャンプから帰ってきたら、持って行ったギアをチェックします。使わなかったものは、ワンタップで落とせます。</p>
+        <ul>
+          <li><strong>念のため</strong> — 使わないのが正常な持ち物</li>
+          <li><strong>出番なし</strong> — 使うつもりだったが、機会がなかった</li>
+        </ul>
+        <p class="sub" style="margin-bottom:0">同じ「使わなかった」でも意味が違うので、分けて記録できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <h2>ギアの側から、どう使われてきたかが読める</h2>
+        <p>ギアの詳細を開くと、そのギアがどのキャンプで、どう使われたかが時系列で並びます。最後に使ったのはいつか、前回から何ヶ月経っているかも表示されます。</p>
+        <p class="sub" style="margin-bottom:0">履歴の行をタップすると、そのキャンプの詳細に移動します。</p>
+      </div>
+      <div class="shot"><img src="images/shot-02-history.png" alt="ギア詳細画面。最終使用日と前回からの経過月数、キャンプごとの使用履歴が時系列で並んでいる" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="row flip">
+      <div class="shot"><img src="images/shot-04-camp.png" alt="キャンプの詳細画面。キャンプ場名、天候、同行スタイル、気温、メモが入力されている" loading="lazy"></div>
+      <div>
+        <h2>キャンプそのものも記録できる</h2>
+        <p>キャンプ場・場所・天候・同行スタイル・サイト種別・気温・メモを残せます。日付は「思い出せるところまで」でよく、年と月だけの登録にも対応しています。</p>
+        <p class="sub" style="margin-bottom:0">「2019年の秋、日付までは覚えていない」——そのまま登録できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="row">
+      <div>
+        <h2>手放しても、履歴は消えない</h2>
+        <p>ギアを手放したり壊れたりしたら、状態を変更します。<strong>削除ではなく状態の変更</strong>なので、それまでの使用履歴は残ります。一覧は「現役」「アーカイブ」「すべて」で絞り込めます。</p>
+      </div>
+      <div class="shot"><img src="images/shot-03-list.png" alt="ギア台帳の一覧画面。現役・アーカイブ・すべてで絞り込め、壊れた・手放したの状態タグが付いたギアも並んでいる" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>料金について</h2>
+    <p><strong>ギアの登録・キャンプの記録・履歴・指標は、無料で無制限に使えます。</strong>登録できるギアの点数に上限もありません。</p>
+    <p>iCloud 同期<span class="tag pro">買い切り ¥480</span>だけが有料です。購入すると、貯めた記録を iCloud に保存し、機種変更や再インストールのあとでも記録を失いません。同期を使わなくても、記録は端末に保存されます。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>データの扱い</h2>
+    <p>
+      記録はお使いの端末と、ご自身の iCloud にのみ保存されます。サーバーへ送信するデータはなく、
+      解析 SDK・広告 SDK も入れていません。
+    </p>
+    <p>写真はアプリ内に複製せず、写真ライブラリの写真を参照します。アプリから写真を外しても、写真ライブラリの実体は残ります。</p>
+    <div class="note">
+      こんな方に向いています——キャンプが趣味でギアがそれなりに増えてきた方、次に何を買うか他人のレビューではなく自分の記録から決めたい方、しばらく行けていないがまた再開したい方。
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><a class="cta" href="https://apps.apple.com/jp/app/geardeban-%E3%82%AE%E3%82%A2%E3%83%87%E3%83%90%E3%83%B3/id6800662584">App Store で見る</a></p>
+    <p style="margin-top:26px">
+      <a href="https://shoheicraftdev-design.github.io/geardeban-support/">サポート・使い方</a>
+      <a href="https://shoheicraftdev-design.github.io/geardeban-support/privacy.html">プライバシーポリシー</a>
+      <a href="https://shoheicraftdev-design.github.io/geardeban-support/terms.html">利用規約</a>
+      <a href="mailto:shohei.craft.dev@gmail.com">お問い合わせ</a>
+    </p>
+    <p style="margin-top:18px">ShoheiCraftDev</p>
+  </div>
+</footer>
+
+</body>
+</html>
