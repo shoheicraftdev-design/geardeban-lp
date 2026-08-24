@@ -14,25 +14,27 @@ Sodato LP（`sodato-lp`）・えも日LP（`emo-diary-lp`）と同じく、**匿
 
 ## 内容の版
 
-**v1.0（現在 App Store 公開中の版）に合わせて作成。** カテゴリ機能・同行スタイル/サイト種別のユーザー定義化・
-写真上限100枚などは v1.1（2026-08-23 審査提出、本稿執筆時点で未公開）の変更点なので、このLPには含めていない。
-v1.1 が公開されたら、掲載スクショと本文（特に「ギア台帳」「キャンプの詳細」まわり）を差し替えること。
-参照: `camp-gear-log/docs/appstore/v1.1-store-listing.md`
+**v1.1（2026-08-24 App Store 公開・現行版）に合わせて作成。** カテゴリの一級市民化・同行スタイル/サイト種別の
+ユーザー定義化・写真上限100枚（キャンプ1件あたり）を反映済み。当初 v1.0 で作成したものを、v1.1 公開を受けて
+2026-08-24 に差し替えた。参照: `camp-gear-log/docs/appstore/v1.1-store-listing.md`
 
 ## 素材
 
 `images/` のスクリーンショットは、アプリ側リポジトリ `camp-gear-log` の
-`docs/appstore/screenshots/iphone-6.7-1284x2778/`（v1.0 掲載用）を長辺640pxへ縮小したもの。
+`docs/appstore/screenshots/v1.1/iphone-6.5-1284x2778/`（v1.1 掲載用）を長辺640pxへ縮小したもの。
+`shot-add.png`（ギアを追加）のみ v1.1 で再撮影されていないため、v1.0 の
+`docs/appstore/screenshots/iphone-6.7-1284x2778/05_add-gear.png` をそのまま使用（この画面は v1.1 で変更なし）。
 差し替える場合は元の 1284×2778 から作り直すこと。`appicon.png` は
 `CampGearLog/Resources/Assets.xcassets/AppIcon.appiconset/app-icon-1024.png` の縮小（256px）。
 
 | ファイル | 元 |
 | :--- | :--- |
-| `shot-01-usage.png` | `01_gear-usage.png`（持って行ったギアを記録） |
-| `shot-02-history.png` | `02_gear-history.png`（ギア詳細・使用履歴） |
-| `shot-03-list.png` | `03_gear-list.png`（ギア台帳一覧） |
-| `shot-04-camp.png` | `04_camp-detail.png`（キャンプの詳細） |
-| `shot-05-add.png` | `05_add-gear.png`（ギアを追加） |
+| `shot-add.png` | v1.0 `05_add-gear.png`（ギアを追加） |
+| `shot-usage.png` | v1.1 `01_gear-usage.png`（持って行ったギアを記録・上部固定ボタン） |
+| `shot-history.png` | v1.1 `02_gear-history.png`（ギア詳細・使用履歴） |
+| `shot-category.png` | v1.1 `03_gear-list-category.png`（ギア台帳のカテゴリ単位表示） |
+| `shot-camp.png` | v1.1 `04_camp-detail.png`（キャンプの詳細・サイト種別ユーザー定義） |
+| `shot-master-edit.png` | v1.1 `05_master-edit.png`（マスタ編集・カテゴリ追加/並び替え） |
 
 ## 文言のルール（アプリ側 `docs/appstore/v1-store-listing.md` の禁止事項を継承）
 
