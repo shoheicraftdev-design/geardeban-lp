@@ -2,7 +2,7 @@
 
 iPhone アプリ「GearDeban（ギアデバン）」（内部名 CampGearLog）の製品紹介ページ。GitHub Pages で公開する想定。
 
-- 公開URL: https://shoheicraftdev-design.github.io/geardeban-lp/（未公開・要 GitHub リポジトリ作成）
+- 公開URL: https://shoheicraftdev-design.github.io/geardeban-lp/ **公開済**（2026-08-24）
 - App Store: **公開中**。`https://apps.apple.com/jp/app/geardeban-%E3%82%AE%E3%82%A2%E3%83%87%E3%83%90%E3%83%B3/id6800662584`
 - サポート / プライバシーポリシー / 利用規約: https://shoheicraftdev-design.github.io/geardeban-support/
 
