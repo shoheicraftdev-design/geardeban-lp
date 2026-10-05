@@ -34,13 +34,17 @@ Sodato LP（`sodato-lp`）・えも日LP（`emo-diary-lp`）と同じく、**匿
 差し替える場合は元の 1284×2778 から作り直すこと。`appicon.png` は
 `CampGearLog/Resources/Assets.xcassets/AppIcon.appiconset/app-icon-1024.png` の縮小（256px）。
 
+2026-10-05: リデザイン(d-lb8tnx の後)に合わせ、写真入りの3枚(history/add/camp)を iPhone 14 Plus シミュレータ(1284×2778)で撮り直し、長辺640pxへ縮小。
+写真は CEO 提供の素材(`hero.jpg`=焚き火、ギア・キャンプの写真3枚)。⚠️ シミュレータは写真の縮小版が生成されず一覧で「写真が見つかりません」になるため、
+撮影ビルドだけ PhotoLibraryResolving に一時パッチ(cloud識別子を使わない・サムネイルも highQualityFormat)を当てた(コミットしていない。実機の挙動とは差がない)。
+
 | ファイル | 元 |
 | :--- | :--- |
-| `shot-add.png` | v1.0 `05_add-gear.png`（ギアを追加） |
+| `shot-add.png` | **2026-10-05 LP用に撮影**（v1.2・ギアを追加・代表写真にランタン） |
 | `shot-usage.png` | v1.1 `01_gear-usage.png`（持って行ったギアを記録・上部固定ボタン） |
-| `shot-history.png` | v1.1 `02_gear-history.png`（ギア詳細・使用履歴） |
+| `shot-history.png` | **2026-10-05 LP用に撮影**（v1.2・ギア詳細・使用履歴・代表写真にファミリーテント） |
 | `shot-category.png` | v1.1 `03_gear-list-category.png`（ギア台帳のカテゴリ単位表示） |
-| `shot-camp.png` | v1.1 `04_camp-detail.png`（キャンプの詳細・サイト種別ユーザー定義） |
+| `shot-camp.png` | **2026-10-05 LP用に撮影**（v1.2・キャンプの詳細・写真1枚） |
 | `shot-master-edit.png` | v1.1 `05_master-edit.png`（マスタ編集・カテゴリ追加/並び替え） |
 
 ## 文言のルール（アプリ側 `docs/appstore/v1-store-listing.md` の禁止事項を継承）
