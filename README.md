@@ -14,18 +14,15 @@ Sodato LP（`sodato-lp`）・えも日LP（`emo-diary-lp`）と同じく、**匿
 
 ## 内容の版
 
-**v1.2（2026-09-10 App Store 公開・現行版）に合わせて更新（2026-09-28・決裁 `d-yso5qm`）。** v1.2 で芯を
-「所有ではなく生存」から**「持っているギアを把握できること」と「そのギアをどう使ったかが残ること」の2本**へ
-言い直した（決裁 `d-mu06vo`）のに合わせ、title・meta・ヒーロー・芯の節を v1.2 のサブタイトル／プロモーション
-テキスト／説明文の書き出しへ差し替え、節の並びを説明文の順（ギアの側から読める → ギア台帳 → 「使った」だけでなく
-「持って行ったが使わなかった」も残せる）へ揃え、ギア台帳の節を追加した。
+**v2.0（2026-10-11 App Store 公開・現行版）に合わせて更新。** 「忘れた」（ギア詳細の忘れた回数・キャンプの詳細から選ぶ）・写真の左右送り・消耗品タブ（No.05 として節を新設）を足した。
 文言の正本: **この LP 自身**。ASC の説明文と揃えなくてよい（2026-10-05 CEO 決裁・全製品）。機能の事実関係はアプリ側を参照し、下の「文言のルール」の禁止事項は引き続き守る。機能の参照先:
-`camp-gear-log/docs/appstore/v1.2-store-listing.md`・`docs/appstore/ver-1.2-submission.md`・`docs/01_product_vision.md`。
-スクリーンショットは v1.2 で撮り直していない（ストアも v1.1 の組）ため v1.1 のまま。
+`camp-gear-log/docs/appstore/v2.0-store-listing.md`・`docs/appstore/ver-2.0-submission.md`・`docs/01_product_vision.md`。
 
-経緯: v1.0 で作成 → 2026-08-24 に v1.1 へ差し替え → 2026-09-28 に v1.2 へ更新。
+経緯: v1.0 で作成 → 2026-08-24 に v1.1 へ差し替え → 2026-09-28 に v1.2 へ更新 → 2026-10-11 に v2.0 へ更新。
 
 ## 素材
+
+`shot-history` / `shot-add` / `shot-camp` / `shot-master-edit` は v1.2 以前の撮影で、タブバーが3タブのまま（v2.0 は4タブ）。撮り直すときは CEO 提供の写真入りで撮る。
 
 `images/` のスクリーンショットは、アプリ側リポジトリ `camp-gear-log` の
 `docs/appstore/screenshots/v1.1/iphone-6.5-1284x2778/`（v1.1 掲載用）を長辺640pxへ縮小したもの。
@@ -41,9 +38,10 @@ Sodato LP（`sodato-lp`）・えも日LP（`emo-diary-lp`）と同じく、**匿
 | ファイル | 元 |
 | :--- | :--- |
 | `shot-add.png` | **2026-10-05 LP用に撮影**（v1.2・ギアを追加・代表写真にランタン） |
-| `shot-usage.png` | v1.1 `01_gear-usage.png`（持って行ったギアを記録・上部固定ボタン） |
+| `shot-usage.png` | v2.0 `01_gear-usage.png`（6.9" から長辺640px・持って行ったギアを記録・念のため／出番なし） |
 | `shot-history.png` | **2026-10-05 LP用に撮影**（v1.2・ギア詳細・使用履歴・代表写真にファミリーテント） |
-| `shot-category.png` | v1.1 `03_gear-list-category.png`（ギア台帳のカテゴリ単位表示） |
+| `shot-category.png` | v2.0 `03_gear-list-category.png`（6.9" から長辺640px・カテゴリ単位表示・手放したバッジ） |
+| `shot-consumable.png` | v2.0 `05_consumable-list.png`（6.9" から長辺640px・消耗品タブ） |
 | `shot-camp.png` | **2026-10-05 LP用に撮影**（v1.2・キャンプの詳細・写真1枚） |
 | `shot-master-edit.png` | v1.1 `05_master-edit.png`（マスタ編集・カテゴリ追加/並び替え） |
 

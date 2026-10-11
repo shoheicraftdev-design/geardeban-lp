@@ -86,7 +86,7 @@
       <div style="flex: 1 1 420px; min-width: 0">
         <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.14em; color: #8A4E0E; margin-bottom: 16px">No.01</div>
         <h2 style="margin: 0 0 20px; font-size: clamp(1.35rem, 2.6vw, 1.9rem); line-height: 1.5; font-weight: 900">ギアの側から、どう使われてきたかが読める</h2>
-        <p style="margin: 0 0 1em">ギアの詳細を開くと、そのギアがどのキャンプで、どう使われたかが時系列で並びます。最後に使ったのはいつか、前回から何ヶ月経っているかも分かります。</p>
+        <p style="margin: 0 0 1em">ギアの詳細を開くと、そのギアがどのキャンプで、どう使われたかが時系列で並びます。最後に使ったのはいつか、前回から何ヶ月経っているか、持って行くのを何回忘れたかも分かります。</p>
         <p style="margin: 0 0 1.4em">「持っている」ではなく「どう使われてきたか」が見えるようになります。</p>
         <p style="margin: 0; font-size: 14px; color: #6B665C">履歴の行をタップすると、そのキャンプの詳細に移動します。</p>
       </div>
@@ -127,8 +127,12 @@
             <div style="font-weight: 700; font-size: 17px; margin-bottom: 4px">出番なし</div>
             <div style="font-size: 14px; color: #5E5A52; line-height: 1.7">使うつもりだったが、出番がなかった</div>
           </div>
+          <div style="border: 1px solid #DDD6C8; border-radius: 16px; padding: 18px 20px; background: #F3EFE6">
+            <div style="font-weight: 700; font-size: 17px; margin-bottom: 4px">忘れた</div>
+            <div style="font-size: 14px; color: #5E5A52; line-height: 1.7">持って行くつもりで、家に置いてきた</div>
+          </div>
         </div>
-        
+        <p style="margin: 0; font-size: 14px; color: #6B665C">忘れたギアは、キャンプの詳細から選んで残せます。「持って行った」の数には入りません。</p>
       </div>
       <div style="flex: 0 1 280px; display: flex; justify-content: center; margin: 0 auto">
         <img src="images/shot-usage.png" loading="lazy" alt="持って行ったギアを記録する画面。使った、または持って行ったが使わなかったをタップで選べる" style="width: 260px; max-width: 100%; height: auto; display: block; border-radius: 32px; border: 7px solid #2B2A27; box-shadow: 0 24px 48px rgba(43,42,39,0.18)">
@@ -153,17 +157,39 @@
           <span style="background: #ECE6D9; border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 500">同行スタイル</span>
           <span style="background: #ECE6D9; border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 500">サイト種別</span>
         </div>
-        <p style="margin: 0; font-size: 14px; color: #6B665C">日付は「思い出せるところまで」でよく、年と月だけの登録にも対応しています。写真はキャンプ1件につき最大100枚まで。</p>
+        <p style="margin: 0; font-size: 14px; color: #6B665C">日付は「思い出せるところまで」でよく、年と月だけの登録にも対応しています。写真はキャンプ1件につき最大100枚まで。拡大したまま、左右に送って見られます。</p>
       </div>
     </div>
 
   </div>
 </section>
 
+<!-- F5: consumables -->
+<section style="padding: 0 24px 40px">
+  <div style="max-width: 1160px; margin: 0 auto">
+    <div style="background: #FBF9F4; border-radius: 28px; padding: 56px clamp(24px, 5vw, 72px); display: flex; flex-wrap: wrap; align-items: center; gap: 48px 72px">
+      <div style="flex: 1 1 420px; min-width: 0">
+        <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.14em; color: #8A4E0E; margin-bottom: 16px">No.05</div>
+        <h2 style="margin: 0 0 20px; font-size: clamp(1.35rem, 2.6vw, 1.9rem); line-height: 1.5; font-weight: 900">消耗品の残りも、ざっくり残せる</h2>
+        <p style="margin: 0 0 1.2em">炭・着火剤・コーヒー豆・ガス缶などの残りを、「消耗品」タブに3段階で残せます。登録は名前だけ。状態は一覧からタップで切り替えられ、「次回までに購入が必要」のものが上に並びます。</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.4em">
+          <span style="background: #ECE6D9; border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 500">次回までに購入が必要</span>
+          <span style="background: #ECE6D9; border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 500">1回分はある</span>
+          <span style="background: #ECE6D9; border-radius: 999px; padding: 6px 14px; font-size: 14px; font-weight: 500">数回分以上ある</span>
+        </div>
+        <p style="margin: 0; font-size: 14px; color: #6B665C">ギアやキャンプの記録とは別のタブです。通知やお店へのリンクはありません。</p>
+      </div>
+      <div style="flex: 0 1 280px; display: flex; justify-content: center; margin: 0 auto">
+        <img src="images/shot-consumable.png" loading="lazy" alt="消耗品の一覧画面。ガス缶とコーヒー豆が「次回までに購入が必要」、着火剤とホワイトガソリンが「1回分はある」、炭が「数回分以上ある」" style="width: 260px; max-width: 100%; height: auto; display: block; border-radius: 32px; border: 7px solid #2B2A27; box-shadow: 0 24px 48px rgba(43,42,39,0.18)">
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- MORE FEATURES: 2-up -->
 <section style="padding: 80px 24px 104px">
   <div style="max-width: 1160px; margin: 0 auto">
-    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.14em; color: #8A4E0E; margin-bottom: 14px">No.05 — No.06</div>
+    <div style="font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.14em; color: #8A4E0E; margin-bottom: 14px">No.06 — No.07</div>
     <h2 style="margin: 0 0 48px; font-size: clamp(1.35rem, 2.6vw, 1.9rem); line-height: 1.5; font-weight: 900">整理も、自分の言葉で。</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px">
 
