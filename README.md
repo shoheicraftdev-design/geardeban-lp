@@ -14,11 +14,11 @@ Sodato LP（`sodato-lp`）・えも日LP（`emo-diary-lp`）と同じく、**匿
 
 ## 内容の版
 
-**v2.1（2026-10-23 App Store 公開・現行版）に合わせて更新。** 全ギア横断の出番写真ページを No.05 として節を新設し、消耗品を No.06、2列の節を No.07—No.08 に繰り下げた。v2.0 では「忘れた」・写真の左右送り・消耗品タブを足している。
+**v2.2（2026-11-03 App Store 公開・現行版）に合わせて更新。** 全キャンプ横断のキャンプ写真ページを No.06 として節を新設し（消耗品は No.07、2列の節は No.08—No.09）、No.04 の写真の一文にピンチでの拡大・縮小を足した。v2.1 では出番写真ページ（No.05）、v2.0 では「忘れた」・写真の左右送り・消耗品タブを足している。
 文言の正本: **この LP 自身**。ASC の説明文と揃えなくてよい（2026-10-05 CEO 決裁・全製品）。機能の事実関係はアプリ側を参照し、下の「文言のルール」の禁止事項は引き続き守る。機能の参照先:
-`camp-gear-log/docs/appstore/v2.0-store-listing.md`・`docs/appstore/ver-2.1-submission.md`・`docs/01_product_vision.md`。
+`camp-gear-log/docs/appstore/v2.0-store-listing.md`・`docs/appstore/ver-2.1-submission.md`・`docs/appstore/ver-2.2-submission.md`・`docs/01_product_vision.md`。
 
-経緯: v1.0 で作成 → 2026-08-24 に v1.1 へ差し替え → 2026-09-28 に v1.2 へ更新 → 2026-10-11 に v2.0 へ更新 → 2026-10-23 に v2.1 へ更新。
+経緯: v1.0 で作成 → 2026-08-24 に v1.1 へ差し替え → 2026-09-28 に v1.2 へ更新 → 2026-10-11 に v2.0 へ更新 → 2026-10-23 に v2.1 へ更新 → 2026-11-03 に v2.2 へ更新。
 
 ## 素材
 
@@ -37,6 +37,7 @@ Sodato LP（`sodato-lp`）・えも日LP（`emo-diary-lp`）と同じく、**匿
 
 | ファイル | 元 |
 | :--- | :--- |
+| `shot-camp-photos.png` | **2026-11-03** アプリ側 `docs/appstore/screenshots/v2.2/iphone-6.3-1206x2622/07_camp-photos.png`（v2.2 掲載用・写真は v2.1 と同じ素材）を長辺640pxへ縮小 |
 | `shot-scene-photos.png` | **2026-10-23** アプリ側 `docs/appstore/screenshots/v2.1/iphone-6.3-1206x2622/06_scene-photos.png`（v2.1 掲載用・CEO 提供の写真をロゴと人が写らないよう切り抜いて撮影）を長辺640pxへ縮小 |
 | `shot-add.png` | **2026-10-05 LP用に撮影**（v1.2・ギアを追加・代表写真にランタン） |
 | `shot-usage.png` | v2.0 `01_gear-usage.png`（6.9" から長辺640px・持って行ったギアを記録・念のため／出番なし） |
